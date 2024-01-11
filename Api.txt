@@ -1,0 +1,22 @@
+Here are various SharePoint REST API endpoint examples.
+
+Operations	Rest API EndPoint
+Get SharePoint Site Collection	https://{site url}/_api/site
+Get a particular SharePoint Site or Web	https://{site url}/_api/web
+Get the SharePoint site title	https://{site url}/_api/web/title
+Get all lists from a SharePoint site	https://{site url}/_api/web/lists
+Get all items from a SharePoint list	https://{site url}/_api/web/lists/getbytitle(‘list name’)/items
+Get a particular column from the SharePoint list	https://{site url}/_api/web/lists/getbytitle(‘list name’)?select={columnName}
+Get the lookup field column value from the SharePoint list	https://{siteurl}/_api/web/lists/getbytitle('Employees')/items?$select=Department/Name,Department/Branch &$expand=Department
+Get all columns from a SharePoint list	https://{site url}/_api/web/lists/getbytitle(‘list name’)/Fields
+Get a SharePoint list by using a list GUIDs	https://{site url}/_api/web/Lists(guid 'GUID')
+Get SharePoint list item by item id	https://{site url}/_api/web/lists/getbytitle(‘list name’)/items(2)
+Get SharePoint logged-in user information	https://{site url}/_api/web/currentUser
+Get all SharePoint site users	https://{site url}/_api/web/siteusers
+Get all SharePoint groups from the site	https://{site url}/_api/web/sitegroups
+Get a particular SharePoint group by group id	https://{site url}/_api/web/sitegroups/GetById(GroupId)
+Get all users from a SharePoint group	https://{site url}/_api/web/sitegroups(Id)/users
+Get all files from a folder	https://{siteurl}/_api/web/GetFileByServerRelativeUrl('/sites/Site Name/Library Name')/Files
+Get metadata for the particular document	https://{siteurl}/_api/web/GetFileByServerRelativeUrl('/sites/Site Name/Library Name/filename.docx')/listItemAllFields
+Get the current version of a file	https://{siteurl}/_api/web/lists(List ID)/items(23)?$select=FileLeafRef,OData__UIVersionString
+Get the E tag of a document	https://{siteurl}/_api/web/GetFileByServerRelativeUrl('/sites/Site Name/Library Name/filename.docx')/etag
